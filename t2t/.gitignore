@@ -1,0 +1,15 @@
+/cache
+# /ft_llms/cache
+# /ft_llms/checkpoints
+/ft_llms/*/
+/attack/*/
+/wandb
+/abc
+/.vscode
+/data/*/
+/test
+# /detect-gpt
+# /Finetune_LLMs
+
+# ft_llms/{cache, checkpoints}
+

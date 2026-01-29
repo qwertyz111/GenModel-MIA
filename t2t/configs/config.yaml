@@ -1,0 +1,46 @@
+random_seed: 48
+model_name: /mnt/data0/fuwenjie/MIA-LLMs/cache/models--decapoda-research--llama-7b-hf/snapshots/5f98eefcc80e437ef68d457ad7bf167c2c6a1348 # EleutherAI/gpt-j-6B gpt2
+target_model: /mnt/data0/fuwenjie/MIA-LLMs/ft_llms/llama/ag_news/target/checkpoint-3000 # valid model:
+reference_model: /mnt/data0/fuwenjie/MIA-LLMs/ft_llms/llama/ag_news/refer/checkpoint-400 #
+dataset_name: ag_news # xsum, ag_news, wikitext
+dataset_config_name: null # wikitext-2-raw-v1 null
+cache_path: ./cache
+use_dataset_cache: true
+packing: true
+calibration: true # whether to enable calibration
+add_eos_token: false
+add_bos_token: false
+pad_token_id: null
+attack_kind: stat # valid attacks: nn, stat
+eval_batch_size: 1 # batch size of the evaluation phase
+maximum_samples: 200 # the maximum samples number for member and non-member records.
+block_size: 128
+validation_split_percentage: 0.1
+preprocessing_num_workers: 1
+mask_filling_model_name: /data/kugao/hf_models/t5-base
+buffer_size: 1
+mask_top_p: 1.0
+span_length: 2
+pct: 0.3 # pct_words_masked
+ceil_pct: false
+int8: false
+half: false
+perturbation_number: 1 # the number of different perturbation strength / position; debugging parameter, should be set to 1 in the regular running.
+sample_number: 10 # the number of sampling
+train_sta_idx: 0
+train_end_idx: 10000
+eval_sta_idx: 0
+eval_end_idx: 1000
+attack_data_path: attack
+load_attack_data: false # whether to load prepared attack data if existing.
+# 扰动幅度
+span_length: 10
+pct: 0.55
+
+# 生成稳定性
+t5_max_length: 256
+t5_top_p: 0.9
+t5_top_k: 50
+t5_temperature: 0.7
+t5_num_beams: 4
+
